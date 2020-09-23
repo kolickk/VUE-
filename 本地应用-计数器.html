@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+			<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="app">
+				
+			<button  @click="sub">这是 减号</button>
+		    <span>{{num}}</span>
+			<button  @click="add">这是 加号</button>
+		</div>
+		<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+	
+		<script >
+			
+			var vue=new Vue({
+				el:"#app",
+				data:{
+					num:1
+				},
+				methods:{
+					add:function(){
+						if(this.num<10){
+						   this.num++;
+						}
+						else{alert('别点了 最大了')}
+					},
+					sub:function(){
+						if(this.num>0){
+						  this.num--;
+						}
+						else{alert('别点了  最大了 ')}
+					}
+				}
+				
+			})
+		</script>
+	</body>
+</html>
