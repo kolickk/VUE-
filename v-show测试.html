@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="app">
+			<input @click="getshow" type="button" value="点一下 切换 显示状态：显示/隐藏"></button>
+			<img src="img/001.jpg" v-show="show" alt="">
+           <input type="button"  @click="addage" value="点一下年龄 +1" />
+		   <img src="img/002.jpg"    v-show="age>17" >
+		   <input type="button" @click="subage" value="点击一下 年龄-1" />
+		</div>
+		<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var vue=new Vue({
+				el:"#app",
+				data:{	
+					show:false	,
+					age:17
+				},
+			methods:{
+				getshow:function(){
+					this.show =!this.show;
+				},
+				addage:function(){
+					this.age++;
+				},
+				subage:function(){
+					this.age--;
+				}
+			},
+			})
+		</script>
+	</body>
+</html>
